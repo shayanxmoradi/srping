@@ -9,11 +9,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Main {
     public static void main(String[] args) {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext(
-                "beans.xml");
-
-        FirstService firstservice = ( FirstService) applicationContext.getBean("firstservice");
-
-firstservice.afterinit();
+                "beans.xml"
+        );
+        FirstService firstService = (FirstService) applicationContext.getBean("firstservice");
+        firstService.afterInit();
+        System.out.println(firstService.getName());
+        firstService.getSecondService().print();
     }
-
 }

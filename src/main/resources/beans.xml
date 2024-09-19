@@ -2,5 +2,10 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-<bean id="firstservice" name="firstservice" class="org.example.service.FirstService"></bean>
+<bean id="firstservice" name="firstservice" class="org.example.service.FirstService">
+    <property name="name" value="shayan" ></property>
+    <constructor-arg ref="secondservice"></constructor-arg>
+</bean>
+    <bean id="secondservice" name="secondservice" class="org.example.service.SecondService"></bean>
+
 </beans>
